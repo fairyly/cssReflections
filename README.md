@@ -14,6 +14,16 @@ For example:
 ```
 -webkit-box-reflect: below 5px -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), color-stop(0.25, transparent), to(rgba(255, 255, 255, 0.6)));
 ```
+## Availability
+
+Standalone available here for device testing (note fixed nHD resolution):
+
+[CSSReflections](http://www.papersnail.co.uk/portfolio/CSSReflections/ "Standalone")
+
+Embedded in [testrig][1] available here:
+
+[CSSReflections in test rig](http://www.papersnail.co.uk/sandbox/shell/index.html?http://www.papersnail.co.uk/portfolio/CSSReflections/?nHD "In test rig")
+
 
 ## Notes
 * Designed using Fireworks initially (source png included in assets directory).
@@ -23,3 +33,6 @@ For example:
 ## Limitations
 * Webkit only.
 * Fixed screen size (360px * 640px - same as target device (nHD))
+
+## References
+[1]: https://github.com/swervo/cssSandbox
