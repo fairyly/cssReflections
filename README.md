@@ -34,5 +34,4 @@ Embedded in [testrig][1] available here:
 * Webkit only.
 * Fixed screen size (360px * 640px - same as target device (nHD))
 
-## References
 [1]: https://github.com/swervo/cssSandbox
