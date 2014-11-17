@@ -27,11 +27,10 @@ Embedded in [testrig][1] available here:
 
 ## Notes
 * Designed using Fireworks initially (source png included in assets directory).
-* Seems to be a bug in Chrome where the reflection disappears after transitioning.
+* Seems to be a bug in Chrome (report raised) where the reflection disappears after transitioning.
 * Works as intended in Safari.
 
 ## Limitations
 * Webkit only.
-* Fixed screen size (360px * 640px - same as target device (nHD))
 
 [1]: https://github.com/swervo/cssSandbox

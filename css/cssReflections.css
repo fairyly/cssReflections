@@ -1,10 +1,48 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
 
 body {
     font-family: sans-serif;
     margin: 0;
     padding:0;
-    font-size:22px;
+    font-size:18px;
     -webkit-user-select: none;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow: hidden;
+}
+
+.notSupported {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #FFE;
+    color: #000;
+    box-sizing: border-box;
+}
+
+.notSupported:after {
+    content: "Portrait orientation supported only. Minimum height of 480px required. Add to homescreen (iOS) to maximise available height.";
+    display: block;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+@media (orientation: portrait) and (min-height: 480px) {
+    .app {
+        display: block;
+    }
+    .notSupported {
+        display: none;
+    }
 }
 
 a {
@@ -18,8 +56,8 @@ a:hover {
 }
 
 .mainContainer {
-    height: 640px;
-    width: 360px;
+    height: 100%;
+    width: 100%;
 }
 
 .screen {
@@ -27,8 +65,10 @@ a:hover {
     width: 100%;
     height: 100%;
     background-color: #000;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #000),
-                color-stop(0.2, #000), color-stop(0.5, #666), color-stop(0.5, #000));
+    background: -moz-linear-gradient(top, #000 0%, #000 20vh, #666 50vh, #000 50vh);
+    background: -webkit-linear-gradient(top, #000 0%, #000 20vh, #666 50vh, #000 50vh);
+    background: -ms-linear-gradient(top, #000 0%, #000 20vh, #666 50vh, #000 50vh);
+    background: linear-gradient(top, #000 0%, #000 20vh, #666 50vh, #000 50vh);
     overflow: hidden;
 }
 
@@ -44,17 +84,18 @@ a:hover {
 }
 
 .legend span:last-child {
-    font-size: .6em;
+    font-size: .7em;
     color: #999;
 }
 
 .photoComp {
     position: absolute;
-    height: 240px;
-    width: 246px;
-    -webkit-box-sizing: border-box;
+    width: 60vw;
+    height: 60vw;
+    box-sizing: border-box;
     border: 1px solid #333;
     background-color: white;
+    background-clip: padding-box;
     color: #000;
     text-align: left;
     -webkit-transition-property: -webkit-transform;
@@ -65,63 +106,66 @@ a:hover {
 }
 
 .photoComp span {
+    position: absolute;
     display: block;
-    margin-left: 6px;
-    margin-bottom: 3px;
+    bottom: 24px;
+    margin-left: 8px;
 }
 
 .photoComp span:last-child {
     font-size: .6em;
     color: #666;
+    bottom: 8px;
 }
 
 .photoComp.withFocus {
     z-index:200;
-    -webkit-transform: translateX(23%) translateY(83%);
+    -webkit-transform: translateX(20vw) translateY(25vh);
 }
 
 .photoComp.atBack {
     z-index:20;
-    -webkit-transform: translateX(23%) translateY(83%) scale(0.2);
+    -webkit-transform: translateX(20vw) translateY(28vh) scale(0.2);
 }
 
 .photoComp.atLeft {
     z-index:100;
-    -webkit-transform: scale(0.4) translateX(-125%) translateY(510px);
+    -webkit-transform: scale(0.4) translateX(-60vw) translateY(70vh);
 }
 
 .photoComp.atRight {
     z-index:100;
-    -webkit-transform: scale(0.4) translateX(240%) translateY(510px);
+    -webkit-transform: scale(0.4) translateX(160vw) translateY(70vh);
 }
 
 .photoComp.atFarLeft {
     z-index:50;
-    -webkit-transform: scale(0.3) translateX(-100%) translateY(650px);
+    -webkit-transform: scale(0.3) translateX(-30vw) translateY(90vh);
 }
 
 .photoComp.atFarRight {
     z-index:50;
-    -webkit-transform: scale(0.3) translateX(250%) translateY(650px);
+    -webkit-transform: scale(0.3) translateX(170vw) translateY(90vh);
 }
 
 .photoComp img {
-    position: relative;
-    top: 1px;
-    height: 180px;
-    width: 240px;
+    width: 100%;
     background-color: #333;
     border: 1px solid #000;
-    -webkit-box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 .controls {
     position: absolute;
-    margin-left: 16%;
-    top: 530px;
+    width: 100%;
     height: 75px;
-    width: 68%;
-/*    text-align: center;*/
+    bottom: 40px;
+}
+
+.controls--buttons {
+    max-width: 280px;
+    height: 100%;
+    margin: auto;
 }
 
 .controls .arrow {
@@ -132,7 +176,7 @@ a:hover {
     float: left;
     height: 0;
     width: 0;
-    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
     -webkit-transition-property: opacity;
     -webkit-transition-duration: 500ms;
 }
@@ -142,10 +186,10 @@ a:hover {
     width: 75px;
     background-color: #999;
     margin: auto;
-    -webkit-border-radius:5px;
+    border-radius:5px;
 }
 
-.controls .autoPlay .play {
+.controls .play {
     position: relative;
     left:2px;
     top:7px;
@@ -156,10 +200,10 @@ a:hover {
     height: 0;
     width: 0;
     margin: auto;
-    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.controls .autoPlay .pause {
+.controls .pause {
     position: relative;
     top:12px;
     border-right: 20px solid #000;
@@ -167,7 +211,7 @@ a:hover {
     height: 50px;
     width: 10px;
     margin: auto;
-    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 
 

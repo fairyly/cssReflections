@@ -2,22 +2,33 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1" />
+        <!-- iOS Full Screen -->
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!-- iOS Status Bar Style (default, black, black-translucent) -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <link rel="stylesheet" href="css/cssReflections.css">
         <title>CSS Reflections</title>
     </head>
     <body>
-        <div id="mainContainer" class="mainContainer">
-            <div id="myImages" class="screen">
-                <div id="legend" class="legend">
-                    <span class="photoTitle">-webkit-box-reflect test app</span>
-                    <span class="photoDate"><a href="mailto:swervo@papersnail.co.uk">swervo@papersnail.co.uk</a></span>
-                </div>
-                <div id="controls" class="controls">
-                    <div id="next" class="arrow next"></div>
-                    <div id="previous" class="arrow"></div>
-                    <div class="autoPlay">
-                        <div id="play" class="play"></div>
-                        <div id="pause" class="pause hidden"></div>
+        <div class="notSupported"></div>
+        <div class="app">
+            <div id="mainContainer" class="mainContainer">
+                <div id="myImages" class="screen">
+                    <div id="legend" class="legend">
+                        <span class="photoTitle">-webkit-box-reflect test app</span>
+                        <span class="photoDate"><a href="mailto:swervo@papersnail.co.uk">swervo@papersnail.co.uk</a></span>
+                    </div>
+                    <div id="controls" class="controls">
+                        <div class="controls--buttons">
+                            <div id="next" class="arrow next"></div>
+                            <div id="previous" class="arrow"></div>
+                            <div class="autoPlay">
+                                <div id="play" class="play"></div>
+                                <div id="pause" class="pause hidden"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
