@@ -35,5 +35,6 @@ Embedded in [testrig][1] available here:
 
 ## Todo
 * Would benefit from proper touch event handling.
+* Add support for landscape orientation.
 
 [1]: https://github.com/swervo/cssSandbox
