@@ -168,31 +168,33 @@ a:hover {
     margin: auto;
 }
 
-.controls .arrow {
+.arrow {
+    height: 0;
+    width: 0;
+    box-sizing: border-box;
     border-left: 0;
     border-top: 37px solid transparent;
     border-right: 65px solid #999;
     border-bottom: 37px solid transparent;
     float: left;
-    height: 0;
-    width: 0;
-    box-sizing: border-box;
     -webkit-transition-property: opacity;
     -webkit-transition-duration: 500ms;
+    cursor: pointer;
 }
 
-.controls .autoPlay {
+.autoPlay {
     height: inherit;
     width: 75px;
-    background-color: #999;
     margin: auto;
     border-radius:5px;
+    background-color: #999;
+    cursor: pointer;
 }
 
-.controls .play {
+.play {
     position: relative;
-    left:2px;
-    top:7px;
+    left: 2px;
+    top: 7px;
     border-right: 0;
     border-top: 30px solid transparent;
     border-left: 50px solid #000;
@@ -203,7 +205,7 @@ a:hover {
     box-sizing: border-box;
 }
 
-.controls .pause {
+.pause {
     position: relative;
     top:12px;
     border-right: 20px solid #000;
@@ -215,20 +217,22 @@ a:hover {
 }
 
 
-.controls .hidden {
-    display:none;
+.hidden {
+    display: none;
 }
 
-.controls .arrow.next {
+.arrow.next {
     border-left: 65px solid #999;
     border-right: 0;
     float: right;
 }
 
-.controls .autoPlay:hover {
+.autoPlay:active {
     background-color: #FFF;
 }
-.controls .arrow:hover {
+
+.arrow:active {
     border-left-color: #FFF;
     border-right-color: #FFF;
 }
+

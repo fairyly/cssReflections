@@ -79,8 +79,10 @@ appLogic = {
         for (i = 0; i <= 5; i += 1) {
             this.imageList[i].className = this.locationList[i];
         }
-        // add a trial event listener
-        // this.imageList[0].addEventListener("webkitTransitionEnd", function(e){console.log(e);}, false);
+        // quick hack to prevent the bounce on iOS
+        document.addEventListener("touchmove", function(e) {
+            e.preventDefault();
+        });
     },
 
     setImageData: function () {
@@ -110,21 +112,21 @@ appLogic = {
 
     nextImage: function () {
         if (appLogic.imageIndex < 5) {
-			appLogic.imageIndex += 1;
-		} else {
-			appLogic.imageIndex = 0;
-		}
-		appLogic.reposition(true);
+            appLogic.imageIndex += 1;
+        } else {
+            appLogic.imageIndex = 0;
+        }
+        appLogic.reposition(true);
     },
 
     previousImage: function () {
         if (appLogic.imageIndex > 0) {
-			appLogic.imageIndex -= 1;
-		} else {
-			appLogic.imageIndex = 5;
-		}
-		appLogic.reposition(false);
-	},
+            appLogic.imageIndex -= 1;
+        } else {
+            appLogic.imageIndex = 5;
+        }
+        appLogic.reposition(false);
+    },
 
     togglePlayback: function (e) {
         var toggleControls, fadeOutManualControls, fadeUpManualControls, whichControl;

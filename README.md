@@ -27,10 +27,13 @@ Embedded in [testrig][1] available here:
 
 ## Notes
 * Designed using Fireworks initially (source png included in assets directory).
-* Seems to be a bug in Chrome (report raised) where the reflection disappears after transitioning.
+* Seems to be a bug in Chrome (report raised) where the reflection disappears after transitioning. Bug now fixed (26th Nov 2014)!
 * Works as intended in Safari.
 
 ## Limitations
 * Webkit only.
+
+## Todo
+* Would benefit from proper touch event handling.
 
 [1]: https://github.com/swervo/cssSandbox
