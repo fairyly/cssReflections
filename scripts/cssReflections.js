@@ -98,11 +98,7 @@ appLogic = {
     },
 
     reposition: function () {
-        var i, moveIndex, tempCallback;
-
-        tempCallback = function tempCallback(e) {
-            e.srcElement.removeEventListener("webkitTransitionEnd", tempCallback, false);
-        };
+        var i, moveIndex;
 
         for (i = 0; i <= 5; i += 1) {
             moveIndex = domLib.modPos((i - appLogic.imageIndex), 6);
@@ -129,29 +125,29 @@ appLogic = {
     },
 
     togglePlayback: function (e) {
-        var toggleControls, fadeOutManualControls, fadeUpManualControls, whichControl;
+        var whichControl;
 
-        toggleControls = function toggleControls() {
+        function toggleControls() {
             (domLib.hasClass(appLogic.playControl, "hidden")) ?
                 domLib.removeClass(appLogic.playControl, "hidden") :
                     domLib.addClass(appLogic.playControl, "hidden");
             (domLib.hasClass(appLogic.pauseControl, "hidden")) ?
                 domLib.removeClass(appLogic.pauseControl, "hidden") :
                     domLib.addClass(appLogic.pauseControl, "hidden");
-        };
+        }
 
-        fadeOutManualControls = function fadeOutManualControls() {
+        function fadeOutManualControls() {
             var hideControls = function hideControls() {
                 domLib.addClass(appLogic.nextControl, "hidden");
                 domLib.addClass(appLogic.prevControl, "hidden");
-                appLogic.nextControl.removeEventListener("webkitTransitionEnd", hideControls, false);
+                appLogic.nextControl.removeEventListener("transitionend", hideControls, false);
             };
             appLogic.nextControl.style.opacity = 0;
             appLogic.prevControl.style.opacity = 0;
-            appLogic.nextControl.addEventListener("webkitTransitionEnd", hideControls, false);
-        };
+            appLogic.nextControl.addEventListener("transitionend", hideControls, false);
+        }
 
-        fadeUpManualControls = function fadeUpManualControls() {
+        function fadeUpManualControls() {
             var showControls = function showControls() {
                 appLogic.nextControl.style.opacity = 1;
                 appLogic.prevControl.style.opacity = 1;
@@ -159,7 +155,7 @@ appLogic = {
             domLib.removeClass(appLogic.nextControl, "hidden");
             domLib.removeClass(appLogic.prevControl, "hidden");
             setTimeout(showControls, 0);
-        };
+        }
 
         whichControl = e.target;
 

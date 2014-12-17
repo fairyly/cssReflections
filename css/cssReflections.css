@@ -9,6 +9,8 @@ body {
     padding:0;
     font-size:18px;
     -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
 
 .app {
@@ -65,8 +67,8 @@ a:hover {
     width: 100%;
     height: 100%;
     background-color: #000;
-    background: -moz-linear-gradient(top, #000 0%, #000 20vh, #666 50vh, #000 50vh);
     background: -webkit-linear-gradient(top, #000 0%, #000 20vh, #666 50vh, #000 50vh);
+    background: -moz-linear-gradient(top, #000 0%, #000 20vh, #666 50vh, #000 50vh);
     background: -ms-linear-gradient(top, #000 0%, #000 20vh, #666 50vh, #000 50vh);
     background: linear-gradient(top, #000 0%, #000 20vh, #666 50vh, #000 50vh);
     overflow: hidden;
@@ -99,10 +101,21 @@ a:hover {
     color: #000;
     text-align: left;
     -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
     -webkit-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
     -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
     -webkit-transition-duration: 500ms;
-    -webkit-box-reflect: below 5px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.25, transparent), to(rgba(255, 255, 255, 0.6)));
+    -moz-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-box-reflect: below 5px -webkit-linear-gradient(top, transparent 0%, transparent 25%, rgba(255, 255, 255, 0.6));
+    -moz-box-reflect: below 5px -moz-linear-gradient(top, transparent 0%, transparent 25%, rgba(255, 255, 255, 0.6));
+    -ms-box-reflect: below 5px -ms-linear-gradient(top, transparent 0%, transparent 25%, rgba(255, 255, 255, 0.6));
+    box-reflect: below 5px linear-gradient(top, transparent 0%, transparent 25%, rgba(255, 255, 255, 0.6));
 }
 
 .photoComp span {
@@ -121,31 +134,43 @@ a:hover {
 .photoComp.withFocus {
     z-index:200;
     -webkit-transform: translateX(20vw) translateY(25vh);
+    -moz-transform: translateX(20vw) translateY(25vh);
+    transform: translateX(20vw) translateY(25vh);
 }
 
 .photoComp.atBack {
     z-index:20;
     -webkit-transform: translateX(20vw) translateY(28vh) scale(0.2);
+    -moz-transform: translateX(20vw) translateY(28vh) scale(0.2);
+    transform: translateX(20vw) translateY(28vh) scale(0.2);
 }
 
 .photoComp.atLeft {
     z-index:100;
     -webkit-transform: scale(0.4) translateX(-60vw) translateY(70vh);
+    -moz-transform: scale(0.4) translateX(-60vw) translateY(70vh);
+    transform: scale(0.4) translateX(-60vw) translateY(70vh);
 }
 
 .photoComp.atRight {
     z-index:100;
     -webkit-transform: scale(0.4) translateX(160vw) translateY(70vh);
+    -moz-transform: scale(0.4) translateX(160vw) translateY(70vh);
+    transform: scale(0.4) translateX(160vw) translateY(70vh);
 }
 
 .photoComp.atFarLeft {
     z-index:50;
     -webkit-transform: scale(0.3) translateX(-30vw) translateY(90vh);
+    -moz-transform: scale(0.3) translateX(-30vw) translateY(90vh);
+    transform: scale(0.3) translateX(-30vw) translateY(90vh);
 }
 
 .photoComp.atFarRight {
     z-index:50;
     -webkit-transform: scale(0.3) translateX(170vw) translateY(90vh);
+    -moz-transform: scale(0.3) translateX(170vw) translateY(90vh);
+    transform: scale(0.3) translateX(170vw) translateY(90vh);
 }
 
 .photoComp img {
@@ -178,7 +203,11 @@ a:hover {
     border-bottom: 37px solid transparent;
     float: left;
     -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    transition-property: opacity;
     -webkit-transition-duration: 500ms;
+    -moz-transition-duration: 500ms;
+    transition-duration: 500ms;
     cursor: pointer;
 }
 

@@ -29,12 +29,14 @@ Embedded in [testrig][1] available here:
 * Designed using Fireworks initially (source png included in assets directory).
 * Seems to be a bug in Chrome (report raised) where the reflection disappears after transitioning. Bug now fixed (26th Nov 2014)!
 * Works as intended in Safari.
+* App works in Firefox but, as Box reflect is not supported, without reflections.
 
 ## Limitations
-* Webkit only.
+* Box reflect not supported in all browsers.
 
 ## Todo
 * Would benefit from proper touch event handling.
 * Add support for landscape orientation.
+* Fix periodic z-order glitch at right during animation
 
 [1]: https://github.com/swervo/cssSandbox
